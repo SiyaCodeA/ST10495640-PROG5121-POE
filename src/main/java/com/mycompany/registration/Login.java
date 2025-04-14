@@ -9,6 +9,7 @@ package com.mycompany.registration;
  * @author RC_Student_lab
  */
 import java.util.regex.*;
+//(OpenAI,2025)
 
 public class Login {
     //attributes
@@ -18,6 +19,15 @@ public class Login {
     private String password;
     private String cellNumber;
     
+    //default constructor
+    public Login(){
+        this.firstName = "";
+        this.lastName = "";
+        this.userName = "";
+        this.password = "";
+        this.cellNumber = "";
+    }
+    
     //constructor
     public Login(String firstName, String lastName, String userName, String password, String cellNumber){
         this.firstName = firstName;
@@ -25,14 +35,12 @@ public class Login {
         this.userName = userName;
         this.password = password;
         this.cellNumber = cellNumber;
-    }
+    } //(IIE,2025)
     
     //getter and setter methods 
-    //getter methods for firstname 
     public String getFirstname(String firstName){
        return firstName;
     }
-    //setter method
     public void setFirstname(String firstName){
         this.firstName = firstName;
     }
@@ -49,7 +57,6 @@ public class Login {
     public String getUsername(String userName){
         return userName;
     }
-    
     public void setUsername(String userName){
         this.userName = userName;
     }
@@ -58,18 +65,17 @@ public class Login {
     public String getPassword(String password){
         return password;
     }
-    
     public void setPassword(String password){
         this.password = password;
     }
     
+    
     public String getCellnumber(String cellNumber){
         return cellNumber;
     }
-    
     public void setCellnumber(String cellNumber){
         this.cellNumber = cellNumber;
-    }
+    } //IIE(2025)
         
     
    
@@ -108,13 +114,12 @@ public class Login {
         }
         
         //cell phone method
-        //ai
         public static boolean checkCellPhoneNumber(String cellNumber){
             String regex = "^(?:\\+27|27|0)(6|7|8)[0-9]{8}$";
             Pattern pattern = Pattern.compile(regex);
             Matcher matcher = pattern.matcher(cellNumber);
             return matcher.matches();
-        }
+        } //(OpenAI,2025)
         
         
      
@@ -122,29 +127,30 @@ public class Login {
         //register method to return necessary registration messaging
         public static String registerUser(String userName, String password, String cellNumber){
             if (checkUserName(userName)){
-                return "Username succesfully captured.";
+                return " valid username.";
             }
             else if (checkPasswordComplexity(password)){
-                return "Password successfully captured.";
+                return " valid Password";
+                
             }
             else if (checkCellPhoneNumber(cellNumber)){
-                return " Cell phone number successfully added.";
+                return "valid cellphone";
             }
-            else if (!checkUserName(userName)) {
-            return "Username is not correctly formatted,please ensure that your username contains an underscore and is no more than five characters in length.";
+            else if (!checkUserName(userName)){
+                return " invalid username.";
             }
-            else if (!checkPasswordComplexity(password)) {
-                return "Password is not correctly formatted,please ensure that the password contains at least eight characters, a capital letter, a number ,and a special character";
+            else if (!checkPasswordComplexity(password)){
+                return "invalid password";
             }
             else {
-                return " Cell phone number incorrectly formatted or does not contain international code.";
+                return "invalid cellphone";
             }
-        }
-           
+            }
+            
  
         //login method
-        public static boolean loginUser(String ploginUser, String ploginPass, String userName, String password){
-            if (ploginUser.equals(userName) && ploginPass.equals(password)){
+        public static boolean loginUser(String loginName, String loginPass, String userName, String password){
+            if (loginName.equals(userName) && loginPass.equals(password)){
             return true;
             }
             else {
@@ -153,14 +159,14 @@ public class Login {
         }
         
         //returning login status method
-        public static String returnLoginStatus(String ploginUser,String ploginPass,  String userName, String password, String firstName, String lastName){
-            if(loginUser( ploginUser,ploginPass , userName, password)){
+        public static String returnLoginStatus(String loginName,String loginPass,  String userName, String password, String firstName, String lastName){
+            if(loginUser( loginName,loginPass , userName, password)){
                return " Welcome "+ firstName +","+ lastName +" it is great to see you.";
             }
             else {
                 return "Username or password incorrect,please try again.";
                     }
-           
+           //(zuhayr,2023)
 }
 }
 
