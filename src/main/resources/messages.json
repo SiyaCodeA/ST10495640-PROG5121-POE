@@ -1,0 +1,18 @@
+
+ 
+   [
+       {
+    "id": "0000000001",
+    "recipient": "+27831234567",
+    "message": "Hello, are you coming to the meeting?",
+    "hash": "00:0:He:H e:G?"
+  },
+          
+  {
+    "id": "0000000002",
+    "recipient": "+27839876543",
+    "message": "Meeting has been moved to 3 PM.",
+    "hash": "00:0:Me:Me:M."
+  }
+
+  ]

@@ -127,23 +127,23 @@ public class Login {
         //register method to return necessary registration messaging
         public static String registerUser(String userName, String password, String cellNumber){
             if (checkUserName(userName)){
-                return " valid username.";
+                return "username successfully captured.";
             }
             else if (checkPasswordComplexity(password)){
-                return " valid Password";
+                return "  Password successfully captured.";
                 
             }
             else if (checkCellPhoneNumber(cellNumber)){
-                return "valid cellphone";
+                return "cellphone number succeffully captured.";
             }
             else if (!checkUserName(userName)){
-                return " invalid username.";
+                return "username not correctly formatted.";
             }
             else if (!checkPasswordComplexity(password)){
-                return "invalid password";
+                return "password not correctly formatted.";
             }
             else {
-                return "invalid cellphone";
+                return "cellphone number incorrectly formatted.";
             }
             }
             

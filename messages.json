@@ -1,0 +1,16 @@
+[
+  {
+    "messageID": "0142496617",
+    "recipient": "+27831234567",
+    "message": "Hello world!",
+    "messageHash": "00:0:HE:HE:D!",
+    "totalMessages": 0
+  },
+  {
+    "messageID": "0599654169",
+    "recipient": "+27831234568",
+    "message": "Another message.",
+    "messageHash": "00:0:AN:AN:E.",
+    "totalMessages": 0
+  }
+]

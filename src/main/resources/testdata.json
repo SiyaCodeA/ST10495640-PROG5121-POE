@@ -1,0 +1,14 @@
+{
+    "messages":  [
+    {
+        "recipient": "+27718693002",
+        "message": "Hi Mike, can you join us for dinner tonight",
+        "action": "send"
+    },
+    {
+        "recipient": "08575975889",
+        "message": "Hi Keegan, did you recieve the payment?",
+        "action": "discard"
+    }
+]
+}
