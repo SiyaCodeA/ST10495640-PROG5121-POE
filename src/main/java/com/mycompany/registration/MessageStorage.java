@@ -23,6 +23,8 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.json.simple.JSONObject;
+
 public class MessageStorage {
     
 
@@ -56,6 +58,8 @@ public class MessageStorage {
         saveMessagesToFile(messages, filename);
     }
 }
+
+
 
     
    

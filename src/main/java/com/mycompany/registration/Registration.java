@@ -20,8 +20,13 @@ import java.util.List;
 // part 3
 
 public class Registration {
-
+    
     public static void main(String[] args) {
+         String recipient = "+27834557896";
+        String message = "Did you get the cake?";
+
+        // Calling the method to store the message in JSON
+        MessageHandler.storeMessageToJSON(recipient, message);
         
         List<String> registeredUsers = new ArrayList<>();
         List<String> registeredPasswords = new ArrayList<>();
@@ -222,10 +227,18 @@ public class Registration {
                     }
                     JOptionPane.showMessageDialog(null, deleted ? "Message successfully deleted." : "Hash not found.");
                     break;
-
                 case 8:
-                    MessageArrays.readStoredMessagesFromFile();
-                    break;
+    List<String> messages = MessageReader.loadStoredMessages();
+    if (messages == null || messages.isEmpty()) {
+        JOptionPane.showMessageDialog(null, "No stored messages found.");
+    } else {
+        StringBuilder sb = new StringBuilder("Stored Messages:\n\n");
+        for (String msg : messages) {
+            sb.append("- ").append(msg).append("\n");
+        }
+        JOptionPane.showMessageDialog(null, sb.toString());
+    }
+    break;
 
                 case 9:
                     JOptionPane.showMessageDialog(null, "Exiting program...");

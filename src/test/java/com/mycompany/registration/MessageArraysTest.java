@@ -8,6 +8,8 @@ package com.mycompany.registration;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 
@@ -84,5 +86,31 @@ public class MessageArraysTest {
     public void testDisplayReport() {
         MessageArrays.displayFullReport();
     }
-}
 
+
+    /*@Test
+    public void testStoreAndReadJSON() {
+        MessageHandler.storeMessageToJSON("+27838884567", "Where are you?");
+        ArrayList<String> messages = MessageReader.loadStoredMessages();
+        assertTrue(messages.contains("Where are you?"));
+    }
+}
+*/
+    
+@Test
+    public void testStoreAndReadJSON() {
+        // Store a known message
+        String testRecipient = "+27838884567";
+        String testMessage = "Where are you?";
+        MessageHandler.storeMessageToJSON(testRecipient, testMessage);
+
+        // Load stored messages
+        List<String> messages = MessageReader.loadStoredMessages();
+
+        // Expected format based on updated MessageReader
+        String expectedFormatted = "To: " + testRecipient + "\nMessage: " + testMessage;
+
+        // Assert that the formatted message exists
+        assertTrue("Expected message not found in stored messages.", messages.contains(expectedFormatted));
+    }
+}

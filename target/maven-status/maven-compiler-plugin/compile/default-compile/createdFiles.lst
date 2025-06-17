@@ -1,6 +1,8 @@
 com\mycompany\registration\MessageArrays.class
 com\mycompany\registration\MessageStorage$1.class
 com\mycompany\registration\Login.class
+com\mycompany\registration\MessageHandler.class
 com\mycompany\registration\Registration.class
 com\mycompany\registration\Message.class
 com\mycompany\registration\MessageStorage.class
+com\mycompany\registration\MessageReader.class
