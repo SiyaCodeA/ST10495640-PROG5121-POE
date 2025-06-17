@@ -88,29 +88,29 @@ public class MessageArraysTest {
     }
 
 
-    /*@Test
+    
+@Test
+    public void testStoreAndReadJSON() {
+       
+        String testRecipient = "+27838884567";
+        String testMessage = "Where are you?";
+        MessageHandler.storeMessageToJSON(testRecipient, testMessage);
+
+        List<String> messages = MessageReader.loadStoredMessages();
+        String expectedFormatted = "To: " + testRecipient + "\nMessage: " + testMessage;
+
+        assertTrue("Expected message not found in stored messages.", messages.contains(expectedFormatted));
+    }
+}
+
+
+
+
+/*
+ @Test
     public void testStoreAndReadJSON() {
         MessageHandler.storeMessageToJSON("+27838884567", "Where are you?");
         ArrayList<String> messages = MessageReader.loadStoredMessages();
         assertTrue(messages.contains("Where are you?"));
     }
-}
-*/
-    
-@Test
-    public void testStoreAndReadJSON() {
-        // Store a known message
-        String testRecipient = "+27838884567";
-        String testMessage = "Where are you?";
-        MessageHandler.storeMessageToJSON(testRecipient, testMessage);
-
-        // Load stored messages
-        List<String> messages = MessageReader.loadStoredMessages();
-
-        // Expected format based on updated MessageReader
-        String expectedFormatted = "To: " + testRecipient + "\nMessage: " + testMessage;
-
-        // Assert that the formatted message exists
-        assertTrue("Expected message not found in stored messages.", messages.contains(expectedFormatted));
-    }
-}
+}*/
